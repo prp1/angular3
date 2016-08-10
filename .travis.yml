@@ -1,11 +1,22 @@
 language: node_js
 node_js:
+  - "5.1"
   - "4"
-  - "5"
-  - "node"
-before_install:
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sleep 3
-sudo: false
+before_script:
+  - npm install --global webpack; npm install --global webpack-dev-server; npm install --global karma-cli; npm install --global protractor; npm install --global typescript; npm install; 
+script: npm run lint; npm run test;
+
+env:
+  - PORT=7777
+  
+# language: node_js
+# node_js:
+#   - "4"
+#   - "5"
+#   - "node"
+# before_install:
+#   - export CHROME_BIN=chromium-browser
+#   - export DISPLAY=:99.0
+#   - sh -e /etc/init.d/xvfb start
+#   - sleep 3
+# sudo: false
