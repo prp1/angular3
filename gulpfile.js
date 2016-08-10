@@ -17,6 +17,6 @@ gulp.task('serve', function () {
 	require('./main.js');
 });
 
-// gulp.task('default',['jshint','test','serve']);
+gulp.task('default',['jshint','test','serve']);
 gulp.task('default',['jshint', 'serve']);
 gulp.task('build',['jshint', 'test']);
